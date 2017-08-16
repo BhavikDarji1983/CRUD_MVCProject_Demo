@@ -1,0 +1,14 @@
+﻿@model MVC_CRUD_Application_Demo.Models.Employee
+
+@{
+    Html.EnableClientValidation();    
+}
+
+@{
+    Page.Title = "Update Employee"; 
+}
+
+<h2>Update Employee</h2>
+@Html.Partial("~/Views/Employee/_Employee.cshtml", Model)
+
+ 

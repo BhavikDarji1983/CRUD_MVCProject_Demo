@@ -1,0 +1,50 @@
+﻿@model MVC_CRUD_Application_Demo.Models.Employee
+<link href="~/Content/style.css" rel="stylesheet" />
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+<br />
+<br />
+@using (Html.BeginForm(Model.Id > 0 ? "UpdateEmployee" : "AddEmployee", "Employee", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true) 
+
+    <div style="float: left; width: 100px;">
+        FirstName
+    </div>
+    <div>
+        @Html.TextBoxFor(model => model.FirstName)
+        @Html.ValidationMessageFor(model => model.FirstName)
+    </div>
+    <br />
+    <div style="float: left; width: 100px;">
+        MiddleName
+    </div>
+    <div>
+        @Html.EditorFor(model => model.MiddleName)
+        @Html.ValidationMessageFor(model => model.MiddleName)
+    </div>
+    <br />
+    <div style="float: left; width: 100px;">
+        LastName
+    </div>
+    <div>
+        @Html.EditorFor(model => model.LastName)
+        @Html.ValidationMessageFor(model => model.LastName)
+    </div>
+    <br />
+    <div style="float: left; width: 100px;">
+        Designation
+    </div>
+    <div>
+        @Html.EditorFor(model => model.Designation)
+        @Html.ValidationMessageFor(model => model.Designation)
+    </div>
+
+    <p>
+        <input type="submit" value="Save" />
+
+    </p>
+
+}
