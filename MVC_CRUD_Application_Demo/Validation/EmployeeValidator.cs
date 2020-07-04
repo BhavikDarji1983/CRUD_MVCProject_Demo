@@ -11,6 +11,7 @@ namespace MVC_CRUD_Application_Demo.Validation
     {
         public EmployeeValidator()
         {
+//testing
             RuleFor(x => x.FirstName).Cascade(CascadeMode.StopOnFirstFailure).
                NotEmpty().WithMessage("FirstName is required.");
             RuleFor(x => x.MiddleName).Cascade(CascadeMode.StopOnFirstFailure).
